@@ -42,6 +42,7 @@
 % \ISBN{text}
 % \department{text}
 % \division{text}                     - Optional
+% \researchgroup{text}                - Optional
 % \thesisin{text}
 % \paperwork{text}
 
@@ -303,6 +304,7 @@
 
 \newcommand{\department}[1]{\gdef\@department{#1}}
 \newcommand{\division}[1]{\gdef\@division{#1}}
+\newcommand{\researchgroup}[1]{\gdef\@researchgroup{#1}}
 \newcommand{\thesisin}[1]{\gdef\@thesisin{#1}}
 \newcommand{\paperwork}[1]{\gdef\@paperwork{#1}}
 
@@ -565,6 +567,7 @@
  \vskip 1.5em
  {\small\noindent\@department\\
   \@ifundefined{@division}{}{\textit{\@division}\\}
+  \@ifundefined{@researchgroup}{}{\textit{\@researchgroup}\\}
   \MakeUppercase{\universityname}\\
   \if@university
    \MakeUppercase{\seconduniversityname}\\
@@ -602,6 +605,7 @@
   \vspace*{\stretch{3}}
   {\@department\par}
   \@ifundefined{@division}{}{{\textit{\@division}\par}}
+  \@ifundefined{@researchgroup}{}{\textit{\@researchgroup}\\}
   {\MakeUppercase{\universityname}
    \if@university
     \\\MakeUppercase{\seconduniversityname}
@@ -636,6 +640,7 @@
   \ifdefempty{\@ISSN}{}{ISSN \@ISSN\\}%
   \@department\\
   \@ifundefined{@division}{}{\@division\\}
+  \@ifundefined{@researchgroup}{}{\@researchgroup\\}
   \universityname\\
   \@postcode\ \cityname\\
   \countryname\\
@@ -667,6 +672,7 @@
    {\renewcommand{\and}{\\}\MakeUppercase{\@author}}\\
   \@department\\
   \@ifundefined{@division}{}{\@division\\}
+  \@ifundefined{@researchroup}{}{\@researchgroup\\}
   \universityname
   \if@university\\\seconduniversityname\fi
  \par}
