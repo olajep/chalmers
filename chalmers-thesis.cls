@@ -134,7 +134,7 @@
 \DeclareOption{g5paper}{\global\@gfivepapertrue}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions
-\LoadClass[twoside]{report}
+\LoadClass[openright,twoside]{report}
 
 % Set up with the required packages
 \RequirePackage{etoolbox}
@@ -144,7 +144,12 @@
   \setlength{\paperwidth}{169mm}
   \setlength{\paperheight}{239mm}
 \fi
-\RequirePackage[top=0.1\paperheight, bottom=0.1\paperheight, left=0.1\paperwidth, right=0.1\paperwidth]{geometry}
+%\RequirePackage[top=0.1\paperheight, bottom=0.1\paperheight, left=0.1\paperwidth, right=0.1\paperwidth]{geometry}
+%\RequirePackage[top=0.12\paperheight, bottom=0.12\paperheight, left=0.12\paperwidth, right=0.12\paperwidth]{geometry}
+%\RequirePackage[twoside, inner=0.15\paperheight, outer=0.10\paperheight, vmargin=0.14\paperwidth]{geometry}
+%\RequirePackage[lmargin=142pt,rmargin=95pt,tmargin=127pt,bmargin=123pt]{geometry}
+\RequirePackage[tmargin=0.1\paperheight, bmargin=0.1\paperheight, lmargin=0.15\paperwidth, rmargin=0.1\paperwidth]{geometry}
+%\RequirePackage{geometry}
 
 % Makes the chapters act like a big section
 \RequirePackage{titlesec}
@@ -747,7 +752,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\maketitle}{%
- \setcounter{page}{-100} % Necessary to give the first pages a unique identifier using hyperref.
+
+\newgeometry{top=0.1\paperheight, bottom=0.1\paperheight, left=0.1\paperwidth, right=0.1\paperwidth}
+\pagenumbering{alph}
+%\setcounter{page}{1} % Necessary to give the first pages a unique identifier using hyperref.
+% \setcounter{page}{-100} % Necessary to give the first pages a unique identifier using hyperref.
  \if@draft\else
   \if@cover
    \makecoverpage
@@ -760,7 +769,9 @@
   \makeprintinfopage
  \fi
 
- \newpage
+\restoregeometry
+
+ \cleardoublepage
  \pagenumbering{roman}
  \makeabstractpage\pagestyle{plain}
 
