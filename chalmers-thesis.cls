@@ -148,21 +148,26 @@
 %\RequirePackage[top=0.12\paperheight, bottom=0.12\paperheight, left=0.12\paperwidth, right=0.12\paperwidth]{geometry}
 %\RequirePackage[twoside, inner=0.15\paperheight, outer=0.10\paperheight, vmargin=0.14\paperwidth]{geometry}
 %\RequirePackage[lmargin=142pt,rmargin=95pt,tmargin=127pt,bmargin=123pt]{geometry}
-\RequirePackage[tmargin=0.1\paperheight, bmargin=0.1\paperheight, lmargin=0.15\paperwidth, rmargin=0.1\paperwidth]{geometry}
+%\RequirePackage[tmargin=0.1\paperheight, bmargin=0.1\paperheight, lmargin=0.15\paperwidth, rmargin=0.1\paperwidth]{geometry}
+\RequirePackage[tmargin=0.1\paperheight, bmargin=0.1\paperheight, lmargin=0.20\paperwidth, rmargin=0.20\paperwidth]{geometry}
 %\RequirePackage{geometry}
 
 % Makes the chapters act like a big section
-\RequirePackage{titlesec}
-\titleclass{\chapter}{straight}
-\newcommand{\chapterbreak}{}
-\titleformat{\chapter}[hang]{\bfseries\LARGE}{\thechapter\quad}{0em}{}
-\titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+%\RequirePackage{titlesec}
+%\titleclass{\chapter}{straight}
+%\newcommand{\chapterbreak}{\cleardoublepage}
+%%\titleformat{\chapter}[hang]{\bfseries\LARGE}{\thechapter\quad}{0em}{}
+%\titleformat{\chapter}[display]{\Huge\bfseries\centering}{\fontsize{60pt}{20pt}\selectfont\thechapter}{20pt}{\fontsize{60pt}{20pt}\selectfont}
+%\titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+
+
 
 % Parts should start a new right side page;
-\titleclass{\part}{straight}
-\newcommand{\partbreak}{\cleardoublepage}
-\titleformat{\part}[display]{\bfseries\huge\centering}{\LARGE\partname\ \thepart}{0em}{}
-\titlespacing*{\part}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+%\titleclass{\part}{straight}
+%\newcommand{\partbreak}{\cleardoublepage}
+%\titleformat{\part}[display]{\bfseries\huge\centering}{\LARGE\partname\ \thepart}{0em}{}
+%\titlespacing*{\part}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
 
 % Adjustments of floats and equations.
 \setlength{\intextsep}{12pt}
